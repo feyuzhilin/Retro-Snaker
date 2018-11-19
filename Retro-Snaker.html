@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #map{
+            width: 800px;
+            height: 500px;
+            background-color: #ccc;
+            margin: 50px auto 0;
+            /*食物和蛇的定位是相对于地图*/
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <button id="start">开始游戏</button>
+    <div id="map"></div>
+
+    <script src="food.js"></script>
+    <script src="snake.js"></script>
+    <script src="game.js"></script>
+
+    <script>
+        // 获取地图元素
+        var map = document.querySelector("#map");
+        var startBtn = document.querySelector("#start");
+
+        // 创建游戏对象
+        var g = new Game(map);
+        g.render();
+
+        startBtn.onclick = function(){
+            g.startGame();
+        }
+
+        // 抽离startGame方法： 职责单一化
+    </script>
+</body>
+</html>
